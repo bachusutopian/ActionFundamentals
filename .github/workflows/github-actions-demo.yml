@@ -28,14 +28,14 @@ jobs:
             echo "The repository ${{ github.repository }} contains the following files:"
             tree
     Test: 
-       runs-on: ubuntul-latest
+       runs-on: ubuntu-latest
        if: github.event_name == 'workflow_dispatch'
        needs: Build
        environment: Test
        steps:
         - run: echo "🧪 Testing..."
     Load-Test: 
-       runs-on: ubuntul-latest
+       runs-on: ubuntu-latest
        if: github.event_name == 'workflow_dispatch'
        needs: Build
        environment: Load-Test
